@@ -1,0 +1,22 @@
+# Arquivos temporários e de backup
+*~
+*.swp
+*.swo
+*.swn
+*.bak
+*.old
+
+# Logs
+*.log
+
+# Arquivos de compilação
+*.o
+*.out
+*.exe
+
+# Diretórios de dependências
+node_modules/
+vendor/
+
+# Arquivos de ambiente
+.env
