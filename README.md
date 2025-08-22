@@ -4,6 +4,14 @@ Uma coleção de scripts Bash e projetos para automação e experimentação em 
 
 ---
 
+## Índice
+
+* [1. setup-rclone-gdrive.sh](#1-setup-rclone-gdrive-sh)
+* [2. backup-docker-volumes.sh](#2-backup-docker-volumes-sh)
+* [3. setup-full-server.sh](#3-setup-full-server-sh)
+
+---
+
 ## Scripts e Projetos
 
 Aqui está a lista de scripts e projetos disponíveis neste repositório.
@@ -36,5 +44,21 @@ Aqui está a lista de scripts e projetos disponíveis neste repositório.
     1.  Edite o script e ajuste as variáveis `SOURCE_DIR` e `DEST_DIR`.
     2.  Torne o script executável: `chmod +x backup-docker-volumes.sh`.
     3.  Execute com `sudo` para garantir as permissões necessárias: `sudo ./backup-docker-volumes.sh`.
+
+### 3. setup-full-server.sh
+
+* **Descrição:** Um script modular e interativo para a configuração completa e inicial de um servidor Linux (Debian/Ubuntu). Automatiza a preparação de discos, compartilhamento de rede, backups em nuvem e a implantação de serviços essenciais e de mídia via Docker.
+* **Funcionalidades Principais:**
+    * **Interface Modular:** Permite ao usuário escolher quais partes da configuração executar através de um menu interativo, ou rodar tudo de uma vez.
+    * **Gestão de Disco e Samba:** Detecta um disco secundário, oferece a opção de formatá-lo (ext4), configura a montagem automática em `/dados` via `/etc/fstab` e cria um compartilhamento de rede Samba para acesso facilitado.
+    * **Backup com Rclone e Cron:** Instala o Rclone, guia o usuário na configuração do Google Drive, cria um serviço `systemd` para a montagem e agenda um backup diário (com retenção de 15 dias) da pasta `/dados` usando `cron`.
+    * **Deploy de Serviços Core:** Implanta um conjunto de serviços essenciais via Docker Compose, incluindo Cloudflare Tunnel (requer token), Portainer, Vaultwarden (gerenciador de senhas) e Marreta.
+    * **Deploy de Stack de Mídia:** Automatiza a instalação de uma stack de mídia completa com Plex, Sonarr, Radarr e SABnzbd, criando a estrutura de diretórios e arquivos de configuração necessários.
+    * **Preparação de Ambiente:** Garante que o Docker e o Docker Compose estejam instalados usando o método oficial e adiciona o usuário ao grupo `docker` para execução de comandos sem `sudo`.
+* **Como Usar:**
+    1.  Torne o script executável: `chmod +x setup-full-server.sh`.
+    2.  Execute com privilégios `sudo`: `sudo ./setup-full-server.sh`.
+    3.  Siga o menu interativo, escolhendo as opções desejadas.
+    4.  Tenha em mãos os tokens necessários (Cloudflare, token de autorização do Rclone) para colar quando solicitado.
 
 ---
