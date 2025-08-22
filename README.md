@@ -6,9 +6,9 @@ Uma coleção de scripts Bash e projetos para automação e experimentação em 
 
 ## Índice
 
-* [1. setup-rclone-gdrive.sh](#1-setup-rclone-gdrive-sh)
-* [2. backup-docker-volumes.sh](#2-backup-docker-volumes-sh)
-* [3. setup-full-server.sh](#3-setup-full-server-sh)
+* [1. setup-rclone-gdrive.sh](#1-setup-rclone-grivesh)
+* [2. backup-docker-volumes.sh](#2-backup-docker-volumessh)
+* [3. setup-full-server.sh](#3-setup-full-serversh)
 
 ---
 
