@@ -51,7 +51,7 @@ Aqui está a lista de scripts e projetos disponíveis neste repositório.
 * **Funcionalidades Principais:**
     * **Interface Modular:** Permite ao usuário escolher quais partes da configuração executar através de um menu interativo, ou rodar tudo de uma vez.
     * **Gestão de Disco e Samba:** Detecta um disco secundário, oferece a opção de formatá-lo (ext4), configura a montagem automática em `/dados` via `/etc/fstab` e cria um compartilhamento de rede Samba para acesso facilitado.
-    * **Backup com Rclone e Cron:** Instala o Rclone, guia o usuário na configuração do Google Drive, cria um serviço `systemd` para a montagem e agenda um backup diário (com retenção de 15 dias) da pasta `/dados` usando `cron`.
+    * **Backup com Rclone e Cron:** Instala o Rclone, guia o usuário na configuração do Google Drive, cria um serviço `systemd` para a montagem e agenda um backup diário (com retenção de 15 dias) da pasta `/dados/dockers` usando `cron`.
     * **Deploy de Serviços Core:** Implanta um conjunto de serviços essenciais via Docker Compose, incluindo Cloudflare Tunnel (requer token), Portainer, Vaultwarden (gerenciador de senhas) e Marreta.
     * **Deploy de Stack de Mídia:** Automatiza a instalação de uma stack de mídia completa com Plex, Sonarr, Radarr e SABnzbd, criando a estrutura de diretórios e arquivos de configuração necessários.
     * **Preparação de Ambiente:** Garante que o Docker e o Docker Compose estejam instalados usando o método oficial e adiciona o usuário ao grupo `docker` para execução de comandos sem `sudo`.
