@@ -192,7 +192,7 @@ configurar_backup_agendado() {
 #!/bin/bash
 # Script de backup com Rclone e retenção de 15 dias. Gerado por script de instalação.
 
-SOURCE="${CAMINHO_BASE_DADOS}/"
+SOURCE="${CAMINHO_BASE_DADOS}/dockers"
 DESTINATION="${REMOTE_NAME}:Backup"
 LOGFILE="${LOG_FILE}"
 RCLONE_CONFIG_FILE="${USER_HOME}/.config/rclone/rclone.conf"
@@ -244,13 +244,13 @@ instalar_rclone() {
     echo "--> Instalando dependências e o rclone..."; apt-get install -y fuse3 curl; curl https://rclone.org/install.sh | sudo bash
     mkdir -p "$MOUNT_POINT" && chown "$REAL_USER":"$REAL_USER" "$MOUNT_POINT"
     echo -e "\n${YELLOW}================================================================================${NC}"
-    echo -e "${YELLOW}    ✨ ATENÇÃO: PASSO MANUAL DE AUTORIZAÇÃO NECESSÁRIO ✨${NC}\n"
-    echo "    Como este script roda num servidor, a autorização com o Google precisa ser feita em um computador que tenha navegador.\n"
-    echo -e "${GREEN}    PASSO 1: Em OUTRO computador (seu notebook, etc.), instale o rclone (Instruções: https://rclone.org/install/).${NC}\n"
-    echo -e "${GREEN}    PASSO 2: No terminal desse outro computador, execute o comando: ${NC}rclone authorize \"drive\"\n"
-    echo -e "${GREEN}    PASSO 3: Seu navegador vai abrir. Faça login na conta Google e permita o acesso.${NC}\n"
-    echo -e "${GREEN}    PASSO 4: Volte ao terminal do seu notebook. Um código longo (token) começando com '{\"access_token\":...}' será exibido.${NC}\n"
-    echo -e "${GREEN}    PASSO 5: Copie TODO esse código e cole-o aqui neste terminal do servidor.${NC}"
+    echo -e "${YELLOW}   ✨ ATENÇÃO: PASSO MANUAL DE AUTORIZAÇÃO NECESSÁRIO ✨${NC}\n"
+    echo "   Como este script roda num servidor, a autorização com o Google precisa ser feita em um computador que tenha navegador.\n"
+    echo -e "${GREEN}   PASSO 1: Em OUTRO computador (seu notebook, etc.), instale o rclone (Instruções: https://rclone.org/install/).${NC}\n"
+    echo -e "${GREEN}   PASSO 2: No terminal desse outro computador, execute o comando: ${NC}rclone authorize \"drive\"\n"
+    echo -e "${GREEN}   PASSO 3: Seu navegador vai abrir. Faça login na conta Google e permita o acesso.${NC}\n"
+    echo -e "${GREEN}   PASSO 4: Volte ao terminal do seu notebook. Um código longo (token) começando com '{\"access_token\":...}' será exibido.${NC}\n"
+    echo -e "${GREEN}   PASSO 5: Copie TODO esse código e cole-o aqui neste terminal do servidor.${NC}"
     echo -e "${YELLOW}================================================================================${NC}"
     read -p "Cole o token de autorização completo aqui: " rclone_token
 
@@ -475,7 +475,7 @@ EOF
 clear
 preparar_ambiente
 echo "======================================================================"
-echo "      SCRIPT DE CONFIGURAÇÃO COMPLETA DE SERVIDOR v1.9"
+echo "       SCRIPT DE CONFIGURAÇÃO COMPLETA DE SERVIDOR v1.9"
 echo "======================================================================"
 echo "Usuário detectado: ${REAL_USER} (PUID=${PUID}, PGID=${PGID})"
 echo ""
@@ -506,7 +506,7 @@ while true; do
 done
 # --- Finalização ---
 echo -e "${GREEN}========================================================"
-echo "      🚀 CONFIGURAÇÃO CONCLUÍDA! 🚀"
+echo "       🚀 CONFIGURAÇÃO CONCLUÍDA! 🚀"
 echo "========================================================${NC}"
 echo -e "\nResumo dos acessos configurados:\n"
 echo "  Compartilhamento de Rede (Samba):"
