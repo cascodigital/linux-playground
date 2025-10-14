@@ -62,3 +62,10 @@ Aqui está a lista de scripts e projetos disponíveis neste repositório.
     4.  Tenha em mãos os tokens necessários (Cloudflare, token de autorização do Rclone) para colar quando solicitado.
 
 ---
+
+## 📊 Projetos Docker
+
+### Ações Treemap
+Dashboard interativo de ações da B3 com rotação automática entre visualizações.
+- Localização: `dockers/acoes-treemap/`
+- Tecnologias: Python, Plotly Dash, Docker
