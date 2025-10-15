@@ -661,6 +661,7 @@ def update_alerts(data):
             alert['message'],
             color=alert['type'],
             dismissable=True,
+            duration=20000,  # Auto-dismiss apos 20 segundos
             className='mb-2',
             style={'font-size': '14px', 'font-weight': 'bold'}
         ) for alert in alerts[:5]
