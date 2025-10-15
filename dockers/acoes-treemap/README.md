@@ -1,75 +1,28 @@
-# Treemap de Acoes - Docker
+Treemap de Ações - Docker
 
-Dashboard interativo para visualizar suas acoes em formato treemap, similar ao InfoMoney.
+Este projeto é um dashboard web que exibe sua carteira de ações brasileiras em formato de treemap. Ele busca dados em tempo real do Yahoo Finance, permitindo que você visualize variação no dia, na semana ou o total investido. A carteira é gerenciada diretamente pela interface web ou pela edição manual do arquivo acoes.csv. A atualização dos dados acontece automaticamente a cada cinco minutos. Tudo roda via Docker, sem depender de instalação do Python ou bibliotecas externas.
 
-## Estrutura de Arquivos
+Para instalar e rodar, siga estes passos simples:
 
-/dados/dockers/acoes/treemap/
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-├── app/
-│   └── main.py
-└── acoes.csv
+Tenha Docker e Docker Compose instalados.
 
-## Instalacao
+Clone ou copie a pasta do projeto para sua máquina. Exemplo usando Git:
+git clone https://github.com/cascodigital/linux-playground.git
+cd linux-playground
 
-1. Crie a estrutura de diretorios:
-```bash
-mkdir -p /dados/dockers/acoes/treemap/app
-cd /dados/dockers/acoes/treemap
-```
+(Opcional) Monte a imagem Docker usando:
+docker compose build
 
-2. Crie os arquivos conforme os conteudos fornecidos
+Suba o container:
+docker compose up -d
 
-3. Inicie o container:
-```bash
-docker-compose up -d
-```
+Acesse no navegador:
+http://localhost:8050
 
-## Uso
+Para adicionar, editar ou remover ações, use o painel web ou edite o arquivo acoes.csv manualmente. Após alterações diretas no CSV, reinicie o container:
+docker compose restart
 
-- Acesse: http://localhost:8050
-- Atualizacao automatica a cada 5 minutos
-- Para adicionar/remover acoes: edite acoes.csv e reinicie o container
+Para parar o serviço, use:
+docker compose down
 
-## Gerenciamento de Acoes
-
-Para adicionar novas acoes, edite o arquivo acoes.csv:
-
-ticker,shares
-CAML3.SA,100
-KLBN4.SA,150
-PNVL3.SA,200
-VALE3.SA,50
-PETR4.SA,75
-
-**IMPORTANTE**: Use o sufixo .SA para acoes brasileiras
-
-Apos editar, reinicie o container:
-```bash
-docker-compose restart
-```
-
-## Comandos Uteis
-
-# Parar o container
-docker-compose down
-
-# Ver logs
-docker-compose logs -f
-
-# Reiniciar
-docker-compose restart
-
-# Rebuild (apos mudancas no codigo)
-docker-compose up -d --build
-
-## Funcionalidades
-
-- Visualizacao em treemap hierarquico
-- Cores baseadas em variacao percentual (verde = alta, vermelho = queda)
-- Tamanho proporcional ao valor investido
-- Atualizacao automatica a cada 5 minutos
-- Interface responsiva
-- Dados em tempo real via Yahoo Finance
+Licença MIT.
