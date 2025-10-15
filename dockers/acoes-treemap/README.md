@@ -158,10 +158,10 @@ Este projeto está sob a licença MIT.
 ## 🎨 Screenshots
 
 ### Dashboard Principal
-<img src="exemplo.png" width="800" alt="Dashboard com treemap">
+<img src="exemplo.jpg" width="800" alt="Dashboard com treemap">
 
 ### Página de Configurações
-<img src="exemploconfig.png" width="800" alt="Configurações">
+<img src="exemploconfig.jpg" width="800" alt="Configurações">
 
 ## ⚠️ Disclaimer
 
